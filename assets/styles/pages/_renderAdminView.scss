@@ -1,0 +1,91 @@
+.admin-brands-container {
+    font-family: $font-primary;
+    color: $text-color;
+
+    .create-btn {
+        margin-bottom: 2rem;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        font-weight: bold;
+        color: $background-header;
+        background-color: $link-color;
+        border: none;
+        border-radius: 0.25rem;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+            background-color: $link-hover-color;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+
+    .col-md-6,
+    .col-lg-4 {
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-bottom: 1.5rem;
+    }
+
+    @media (min-width: 992px) {
+        .col-lg-4 {
+            width: 25%;
+        }
+    }
+
+    .card {
+        margin-bottom: 1rem;
+        border: 1px solid $border-color;
+        border-radius: $border-radius;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s, box-shadow 0.2s;
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 1.5rem;
+
+            .card-title {
+                font-family: $font-secondary;
+                font-size: 1.5rem;
+                font-weight: bold;
+                margin-bottom: 0.75rem;
+                color: $heading-color;
+            }
+
+            .card-text {
+                margin-bottom: 1rem;
+                color: $text-color;
+            }
+
+            .btn {
+                margin-top: auto;
+                padding: 0.5rem 1rem;
+                font-size: 1rem;
+                font-weight: bold;
+                color: $background-header;
+                background-color: $link-color;
+                border: none;
+                border-radius: 0.25rem;
+                transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+                &:hover {
+                    background-color: $link-hover-color;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,94 @@
+.header {
+    background-color: $background-header;
+    padding: 1rem 0;
+
+    .navbar-brand {
+        font-weight: bold;
+        font-size: 1.5rem;
+        color: $heading-color;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+
+        &-nav {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+
+            .nav-item {
+                margin-right: 1rem;
+            }
+
+            .nav-link {
+                color: $text-color;
+                font-size: 1.2rem;
+                text-decoration: none;
+                padding: 0.5rem;
+                &:hover {
+                    color: darken($text-color, 10%);
+                }
+            }
+
+            .bi {
+                font-size: 1.5rem;
+                text-decoration: none;
+            }
+        }
+    }
+
+    .form-inline {
+        display: flex;
+        align-items: center;
+        flex-grow: 1;
+        margin: 0;
+
+        .input-group {
+            flex-grow: 1;
+
+            .form-control {
+                border: 1px solid $text-color;
+                flex-grow: 1; // Permettre à l'input de prendre toute la largeur disponible
+            }
+
+            .input-group-text {
+                background: transparent;
+                border: none;
+                color: $text-color;
+                display: flex;
+                align-items: center;
+                padding: 0.5rem;
+            }
+
+            .bi {
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    .navbar-icons {
+        display: flex;
+        align-items: center;
+
+        .nav-item {
+            margin-left: 1rem;
+        }
+
+        .nav-link {
+            color: $text-color;
+            text-decoration: none;
+            &:hover {
+                color: darken($text-color, 10%);
+            }
+
+            .bi {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}

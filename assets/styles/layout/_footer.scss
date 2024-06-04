@@ -1,0 +1,40 @@
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+
+    h5 {
+        color: #909090;
+    }
+
+    a {
+        color: #fff;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .list-unstyled {
+        padding-left: 0;
+        list-style: none;
+
+        li {
+            margin-bottom: 10px;
+        }
+    }
+
+    .footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .footer-column {
+        flex: 1;
+        min-width: 200px;
+        margin-bottom: 20px;
+        padding: 0 15px;
+    }
+}

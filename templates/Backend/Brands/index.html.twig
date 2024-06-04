@@ -1,0 +1,34 @@
+{% extends 'Backend/base.html.twig' %}
+
+{% block title %}
+    Administration des Marques
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    <section class="container mt-5 admin-brands-container">
+        <h1 class="text-center mb-4">Administration des marques</h1>
+        <a href="{{ path('app.admin.brands.create') }}" class="btn btn-primary create-btn">Créer une marque</a>
+        <div class="row">
+            {% for brand in brands %}
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ brand.name }}</h5>
+                            <p class="card-text">{{ brand.description }}</p>
+                            <p class="card-text"><strong>Image :</strong> {{ brand.imageName }}</p>
+                            <p class="card-text"><strong>Date de création :</strong> {{ brand.createdAt ? brand.createdAt|date('d/m/Y H:i:s') : '' }}</p>
+                            <p class="card-text">{{ brand.enable ? 'Actif' : 'Inactif' }}</p>
+                            <div class="d-flex justify-content-between mt-auto">
+                                <a href="{{ path('app.admin.brands.update', { id: brand.id }) }}" class="btn btn-primary">
+                                    Modifier
+                                </a>
+                                {% include 'Backend/Brands/_deleteForm.html.twig' %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

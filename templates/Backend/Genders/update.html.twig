@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Modification d'un genre
+	{{ parent() }}
+
+{% endblock %}
+
+{% block body %}
+	<section >
+		<h1>Modifier un genre</h1>
+        {% include 'Backend/Genders/_form.html.twig' %}
+		<a href="{{path('app.admin.genders.index')}}">Retour à la liste</a>
+	</section>
+{% endblock %}

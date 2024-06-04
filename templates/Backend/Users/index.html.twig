@@ -1,0 +1,31 @@
+{% extends 'Backend/base.html.twig' %}
+
+{% block title %}
+    Administration des genres
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    <section class="container mt-5">
+        <h1 class="text-center mb-4">Administration des utilisateurs</h1>
+        <div class="row">
+            {% for user in users %}
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ user.firstname }}</h5>
+                            <p class="card-text">{{ user.email }}</p>
+                            <p class="card-text">{{ user.roles | join(', ') }}</p>
+                            <div class="d-flex justify-content-between">
+                                <a href="{{ path('app.admin.users.update', { id: user.id }) }}" class="btn btn-primary">
+                                    Modifier
+                                </a>
+                                {% include 'Backend/Users/_deleteForm.html.twig' %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

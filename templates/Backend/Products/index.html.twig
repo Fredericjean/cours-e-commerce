@@ -1,0 +1,33 @@
+{% extends 'Backend/base.html.twig' %}
+
+{% block title %}
+    Administration des Produits
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    <section class="container mt-5 admin-brands-container">
+        <h1 class="text-center mb-4">Administration des produits</h1>
+        <a href="{{ path('app.admin.products.create') }}" class="btn btn-primary create-btn">Créer un produit</a>
+        <div class="row">
+            {% for product in products %}
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ product.name }}</h5>
+                            <p class="card-text">{{ product.description }}</p>
+                            <p class="card-text"><strong>Date de création :</strong> {{ product.createdAt ? product.createdAt|date('d/m/Y H:i:s') : '' }}</p>
+                            <p class="card-text">{{ product.enable ? 'Actif' : 'Inactif' }}</p>
+                            <div class="d-flex justify-content-between mt-auto">
+                                <a href="{{ path('app.admin.products.update', { id: product.id }) }}" class="btn btn-primary">
+                                    Modifier
+                                </a>
+                                {% include 'Backend/Products/_deleteForm.html.twig' %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

@@ -1,25 +1,31 @@
 <html>
-<head>
-<!-- Les métas qui doivent être sur toutes les pages et qui seront toujours
-appelées -->
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-
-fit=no">
-<title>
-{% block title %}{% endblock %} <!-- La balise qui indique où le contenu du block
-Title des autres fichiers va être intégré -->
-</title>
-{% block stylesheets %}{% endblock %} <!-- La balise qui indique où le contenu du
-block CSS des autres fichiers va être intégré -->
-</head>
-<body>
-<nav>
-<!-- La navbar de votre site qui sera sur toutes les pages -->
-</nav>
-{% block body %}{% endblock %} <!-- La balise qui indique où le contenu body des
-autres fichiers va être intégré -->
-{% block javascripts %}{% endblock %} <!-- La balise qui indique où les balises
-javascript des autres fichiers va être intégré -->
-</body>
+	<head>
+		<!-- Les métas qui doivent être sur toutes les pages et qui seront toujours
+		appelées -->
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-
+			fit=no">
+		<title>
+			Wethenew
+		</title>
+        {% block stylesheets %}
+            {{encore_entry_link_tags('app')}}
+        {% endblock %}
+        {% block javascript %}
+            {{encore_entry_script_tags('app')}}
+        {% endblock %}
+
+	</head>
+    <body>
+    {% include 'Layout/_header.html.twig' %}
+        <main>
+        {% include 'Layout/_flash.html.twig' %}
+        {% block body %}
+            
+        {% endblock %}
+        </main>
+        {% include 'Layout/_footer.html.twig' %}
+    </body>
+
 </html>
